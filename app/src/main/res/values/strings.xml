@@ -1,0 +1,4 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="mapbox_access_token" translatable="false" tools:ignore="UnusedResources">pk.eyJ1Ijoid2lsbGEyMDIzIiwiYSI6ImNsdDNpaTdkMzFrMW8ycXF5emV3YXpkZHEifQ.--h2zporbQONNo8KIiXTLg</string>
+    <string name="app_name">mevotest</string>
+</resources>
