@@ -1,7 +1,4 @@
 package com.example.mevotest.network
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 
 import retrofit2.Call
 import retrofit2.http.GET
