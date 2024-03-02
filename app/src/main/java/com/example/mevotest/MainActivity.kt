@@ -20,11 +20,8 @@ import com.mapbox.bindgen.Value
 import com.mapbox.geojson.Point
 import com.mapbox.maps.CameraOptions
 import com.mapbox.maps.MapView
-import com.mapbox.maps.MapboxMap
 import com.mapbox.maps.Style
-import com.mapbox.maps.dsl.cameraOptions
 import com.mapbox.maps.extension.style.layers.addLayer
-import com.mapbox.maps.extension.style.layers.generated.fillExtrusionLayer
 import com.mapbox.maps.extension.style.layers.generated.fillLayer
 import com.mapbox.maps.extension.style.layers.generated.lineLayer
 import com.mapbox.maps.extension.style.layers.generated.symbolLayer
@@ -40,7 +37,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mapView: MapView
-    private lateinit var mapboxMap: MapboxMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,7 +67,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSatellite() {
-        mapboxMap = mapView.mapboxMap.apply {
+        mapView.mapboxMap.apply {
             loadStyle(Style.SATELLITE_STREETS) {}
         }
     }
@@ -94,7 +90,7 @@ class MainActivity : AppCompatActivity() {
             ) {
                 Log.d("willa", response.body()?.data.toString())
 
-                mapboxMap = mapView.mapboxMap.apply {
+                mapView.mapboxMap.apply {
                     loadStyle(Style.STANDARD) {
                         addGeoJsonSource(
                             response.body()?.data?.features?.get(0)?.properties?.iconUrl.toString(),
